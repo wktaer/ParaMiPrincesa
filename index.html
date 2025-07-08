@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para el amor de mi vida 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;600;700&family=Caveat:wght@400;600;700&family=Great+Vibes:wght@400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #1a0814 0%, #2d1b36 25%, #4c2a4d 50%, #6d3c6d 75%, #8e4d8e 100%);
+            background-size: 400% 400%;
+            animation: gradientFlow 20s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 100% 50%; }
+            50% { background-position: 50% 100%; }
+            75% { background-position: 0% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .romantic-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 192, 203, 0.5) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 218, 185, 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 60% 20%, rgba(186, 85, 211, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 90% 40%, rgba(221, 160, 221, 0.4) 0%, transparent 50%);
+        }
+        
+        .fireworks-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .firework {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        .firework.pink {
+            background: radial-gradient(circle, #ff69b4, #ff1493);
+            box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493, 0 0 60px #ff69b4;
+        }
+        
+        .firework.purple {
+            background: radial-gradient(circle, #da70d6, #9370db);
+            box-shadow: 0 0 20px #da70d6, 0 0 40px #9370db, 0 0 60px #da70d6;
+        }
+        
+        .firework.gold {
+            background: radial-gradient(circle, #ffd700, #ffaa00);
+            box-shadow: 0 0 20px #ffd700, 0 0 40px #ffaa00, 0 0 60px #ffd700;
+        }
+        
+        .firework.explode {
+            animation: explode 2.5s ease-out forwards;
+        }
+        
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            10% {
+                opacity: 1;
+                transform: scale(3);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(12);
+            }
+            100% {
+                opacity: 0;
+                transform: scale(18);
+            }
+        }
+        
+        .firework-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+            opacity: 1;
+        }
+        
+        .firework-particle.pink {
+            background: #ff69b4;
+            box-shadow: 0 0 15px #ff69b4;
+        }
+        
+        .firework-particle.purple {
+            background: #da70d6;
+            box-shadow: 0 0 15px #da70d6;
+        }
+        
+        .firework-particle.gold {
+            background: #ffd700;
+            box-shadow: 0 0 15px #ffd700;
+        }
+        
+        .firework-particle.silver {
+            background: #e5e5e5;
+            box-shadow: 0 0 15px #e5e5e5;
+        }
+        
+        .firework-particle.trail {
+            background: #fff;
+            box-shadow: 0 0 10px #fff;
+        }
+        
+        /* Fuegos artificiales específicos para la carta */
+        .letter-fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 25;
+            overflow: hidden;
+        }
+        
+        .border-firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        .border-firework.heart {
+            background: radial-gradient(circle, #ff1493, #dc143c);
+            box-shadow: 0 0 20px #ff1493, 0 0 40px #dc143c;
+        }
+        
+        .border-firework.rose {
+            background: radial-gradient(circle, #ff69b4, #ff1493);
+            box-shadow: 0 0 20px #ff69b4, 0 0 40px #ff1493;
+        }
+        
+        .border-firework.sparkle {
+            background: radial-gradient(circle, #ffffff, #ffd700);
+            box-shadow: 0 0 20px #ffffff, 0 0 40px #ffd700;
+        }
+        
+        .cascade-firework {
+            position: absolute;
+            width: 2px;
+            height: 15px;
+            background: linear-gradient(to bottom, #ffd700, #ff69b4, transparent);
+            border-radius: 50%;
+            opacity: 0;
+            animation: cascade 3s linear infinite;
+        }
+        
+        @keyframes cascade {
+            0% {
+                opacity: 1;
+                transform: translateY(-20px) scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(200px) scale(0.8);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(400px) scale(0.5);
+            }
+        }
+        
+        .sparkle-effect {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+        
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            animation: twinkle 3s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 2;
+            overflow: hidden;
+        }
+        
+        .floating-emoji {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: floatUp 15s linear infinite;
+            opacity: 0;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+        }
+        
+        @keyframes floatUp {
+            0% { 
+                transform: translateY(100vh) rotate(0deg) scale(0.5); 
+                opacity: 0; 
+            }
+            10% { opacity: 0.9; transform: scale(1); }
+            90% { opacity: 0.9; }
+            100% { 
+                transform: translateY(-100px) rotate(360deg) scale(1.2); 
+                opacity: 0; 
+            }
+        }
+        
+        .scene {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            perspective: 1500px;
+        }
+        
+        .envelope-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 280px;
+            cursor: pointer;
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 10;
+            filter: drop-shadow(0 25px 50px rgba(255, 105, 180, 0.6));
+        }
+        
+        .envelope-container:hover {
+            transform: translate(-50%, -50%) scale(1.08);
+            filter: drop-shadow(0 30px 60px rgba(255, 105, 180, 0.8));
+        }
+        
+        .envelope-container.opening {
+            pointer-events: none;
+        }
+        
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b, #ffa8cc, #ffb7ce);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.4);
+        }
+        
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+            animation: shimmer 4s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .envelope-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65%;
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b, #ffa8cc, #ffb7ce);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: 50% 0%;
+            transition: transform 2.5s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 3;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.5);
+        }
+        
+        .envelope.opened .envelope-flap {
+            transform: rotateX(-180deg);
+        }
+        
+        .envelope-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 4;
+            width: 90%;
+        }
+        
+        .envelope-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            from { text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4); }
+            to { text-shadow: 2px 2px 20px rgba(255, 255, 255, 0.8); }
+        }
+        
+        .envelope-subtitle {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            opacity: 0.95;
+            font-weight: 600;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .wax-seal {
+            position: absolute;
+            bottom: 20px;
+            right: 25px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #dc143c, #b91c3c, #991b1b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            color: white;
+            box-shadow: 0 15px 30px rgba(220, 20, 60, 0.7);
+            z-index: 4;
+            animation: sealPulse 2.5s ease-in-out infinite;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        @keyframes sealPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        .letter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff8f8, #fef7f7, #fdf2f8);
+            padding: 40px;
+            box-shadow: 0 40px 80px rgba(255, 105, 180, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow-y: auto;
+            z-index: 20;
+            transform: scale(0.9);
+        }
+        
+        .letter.show {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+        }
+        
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .letter-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            animation: fadeInDown 2s ease-out;
+        }
+        
+        @keyframes fadeInDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .letter-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            font-weight: 400;
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b, #ffa8cc, #dc143c);
+            background-size: 300% 300%;
+            animation: gradientText 5s ease infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        @keyframes gradientText {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .letter-date {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4rem;
+            color: #be185d;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+        }
+        
+        .letter-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #4a044e;
+            position: relative;
+            animation: fadeInUp 2.5s ease-out 0.5s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .letter-content p {
+            margin-bottom: 25px;
+            font-weight: 400;
+            transition: all 0.4s ease;
+            padding: 18px;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .letter-content p:hover {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.1), rgba(255, 192, 203, 0.1));
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.15);
+        }
+        
+        .letter-content img {
+            display: block;
+            margin: 20px auto;
+            max-width: 200px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .letter-content img:hover {
+            transform: scale(1.05);
+        }
+        
+        .love-story-section {
+            margin: 50px 0;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.18), rgba(255, 192, 203, 0.18));
+            border-radius: 25px;
+            border: 3px solid rgba(255, 105, 180, 0.3);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+        }
+        
+        .love-story-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            font-weight: 400;
+            color: #be185d;
+            text-align: center;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .memory-section {
+            margin: 35px 0;
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255, 248, 248, 0.4));
+            border-radius: 18px;
+            border-left: 5px solid #ff6b9d;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.1);
+        }
+        
+        .memory-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #be185d;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+        
+        .memory-text, .memory-2 {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #701a75;
+            font-style: italic;
+        }
+        
+        .romantic-quote {
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.6rem;
+            color: #be185d;
+            text-align: center;
+            margin: 30px 0;
+            font-style: italic;
+            position: relative;
+            padding: 25px;
+            border-left: 4px solid #ff6b9d;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.12), rgba(255, 192, 203, 0.12));
+            border-radius: 12px;
+        }
+        
+        .romantic-quote::before {
+            content: '"';
+            font-size: 3.5rem;
+            position: absolute;
+            top: -8px;
+            left: 20px;
+            color: #ff6b9d;
+            opacity: 0.4;
+        }
+        
+        .romantic-quote::after {
+            content: '"';
+            font-size: 3.5rem;
+            position: absolute;
+            bottom: -25px;
+            right: 20px;
+            color: #ff6b9d;
+            opacity: 0.4;
+        }
+        
+        .promises-section {
+            margin: 50px 0;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(255, 218, 185, 0.25), rgba(255, 192, 203, 0.25));
+            border-radius: 25px;
+            border: 3px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .promises-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #be185d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .promise-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            border-left: 4px solid #ff6b9d;
+            box-shadow: 0 8px 20px rgba(255, 105, 180, 0.1);
+        }
+        
+        .promise-emoji {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .promise-text {
+            font-size: 1.1rem;
+            color: #701a75;
+            line-height: 1.6;
+        }
+        
+        .future-dreams-section {
+            margin: 50px 0;
+            padding: 35px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.18), rgba(255, 218, 185, 0.18));
+            border-radius: 25px;
+            border: 3px solid rgba(255, 105, 180, 0.3);
+        }
+        
+        .future-dreams-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.5rem;
+            color: #be185d;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .dream-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border-left: 5px solid #ff6b9d;
+            box-shadow: 0 10px 25px rgba(255, 105, 180, 0.1);
+        }
+        
+        .dream-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #be185d;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .dream-text {
+            font-size: 1.1rem;
+            color: #701a75;
+            line-height: 1.6;
+        }
+        
+        .signature {
+            text-align: center;
+            margin-top: 60px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #be185d;
+            animation: signatureGlow 3s ease-out 2s both;
+            position: relative;
+        }
+        
+        @keyframes signatureGlow {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .signature::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 250px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+            animation: lineGrow 1.5s ease-out 3s both;
+        }
+        
+        @keyframes lineGrow {
+            from { width: 0; }
+            to { width: 250px; }
+        }
+        
+        .close-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff6b9d, #ff8a9b, #ffa8cc, #dc143c);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.5);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(40px);
+            z-index: 25;
+        }
+        
+        .close-button.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .close-button:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 25px 50px rgba(255, 105, 180, 0.7);
+        }
+        
+        /* Optimizaciones para móvil */
+        @media (max-width: 768px) {
+            .envelope-container {
+                width: 85vw;
+                height: 50vh;
+            }
+            
+            .envelope-title {
+                font-size: 1.8rem;
+            }
+            
+            .envelope-subtitle {
+                font-size: 1rem;
+            }
+            
+            .wax-seal {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                right: 20px;
+            }
+            
+            .letter-title {
+                font-size: 2rem;
+            }
+            
+            .letter-content {
+                font-size: 1rem;
+            }
+            
+            .love-story-title {
+                font-size: 1.8rem;
+            }
+            
+            .romantic-quote {
+                font-size: 1.2rem;
+            }
+            
+            .promises-title, .future-dreams-title {
+                font-size: 1.6rem;
+            }
+            
+            .signature {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .envelope-container {
+                width: 90vw;
+                height: 45vh;
+            }
+            
+            .envelope-title {
+                font-size: 1.5rem;
+            }
+            
+            .envelope-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .letter {
+                padding: 15px;
+            }
+            
+            .letter-title {
+                font-size: 1.6rem;
+            }
+            
+            .letter-content {
+                font-size: 0.95rem;
+            }
+            
+            .love-story-section, .promises-section, .future-dreams-section {
+                padding: 20px;
+                margin: 25px 0;
+            }
+            
+            .close-button {
+                bottom: 15px;
+                right: 15px;
+                padding: 12px 20px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .envelope-container {
+                width: 95vw;
+                height: 40vh;
+            }
+            
+            .envelope-title {
+                font-size: 1.3rem;
+            }
+            
+            .letter-title {
+                font-size: 1.4rem;
+            }
+            
+            .romantic-quote {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars" id="stars"></div>
+    <div class="romantic-background"></div>
+    <div class="fireworks-container" id="fireworksContainer"></div>
+    <div class="letter-fireworks" id="letterFireworks"></div>
+    <div class="floating-elements" id="floatingElements"></div>
+    
+    <div class="scene">
+        <div class="envelope-container" id="envelopeContainer">
+            <div class="envelope" id="envelope">
+                <div class="envelope-flap"></div>
+                <div class="envelope-content">
+                    <div class="envelope-title">Para mi princesa</div>
+                    <div class="envelope-subtitle">Toca para abrir preciosa ✨</div></div>
+                <div class="wax-seal">💕</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="letter" id="letter">
+        <div class="letter-container">
+            <div class="letter-header">
+                <div class="letter-title">Para el amor de mi vida</div>
+                <div class="letter-date">8 de julio de 2025</div>
+            </div>
+            
+            <div class="letter-content">
+                <p>Mi amor hermoso,</p>
+                
+                <p>Desde el primer día que te vi, supe que algo especial había llegado a mi vida. Cada momento contigo es un regalo que atesoro en mi corazón. Eres la luz que ilumina mis días más oscuros y la razón por la que despierto cada mañana con una sonrisa.</p>
+                
+                <div class="love-story-section">
+                    <div class="love-story-title">Nuestra Historia de Amor</div>
+                    
+                    <div class="memory-section">
+                        <div class="memory-title">Nuestro Primer Encuentro 💫</div>
+                        <div class="memory-text">
+                            Recuerdo cada detalle de cuando nos conocimos. Tu sonrisa iluminó todo el lugar, y en ese momento supe que mi vida había cambiado para siempre. Fue como si el destino hubiera conspirado para unirnos en ese momento perfecto.
+                        </div>
+                    </div>
+                    
+                    <div class="memory-section">
+                        <div class="memory-title">Momentos Especiales 🌟</div>
+                        <div class="memory-2">
+                            Cada abrazo, cada risa compartida, cada conversación hasta altas horas de la noche... Todo forma parte de esta hermosa historia que estamos escribiendo juntos. Eres mi compañera de aventuras, mi confidente, mi mejor amiga y mi gran amor.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="romantic-quote">
+                    En un mundo lleno de cambios, tú eres mi constante. En un océano de personas, tú eres mi hogar.
+                </div>
+                
+                 <div class="memory-section">
+                            <img src="https://i.pinimg.com/originals/5c/7d/3d/5c7d3d78c58eb1eba524cd51c1a39ec8.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🍝 La Dama y el Vagabundo</div>
+                        <div class="memory-text">
+                            Nosotros, incluso siendo perritos, terminamos encontrándonos
+                            Porque no importa si venimos de mundos distintos o si dormimos bajo estrellas diferentes, de alguna forma siempre acabamos compartiendo un espagueti, juntitos, mirándonos como si nada más importara, con esa mirada tuya que me derrite aunque sea en forma de perrita preciosa
+                        </div>
+                    </div>
+                    
+                    <div class="memory-section">
+                        <img src="https://i.gifer.com/5SaI.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🐸 La Princesa y el Sapo</div>
+                        <div class="memory-2">
+                            Usted rompería cualquier maldición con un solo beso
+Yo sería un sapito medio torpe pero totalmente enamorado, y usted mi princesa valiente, que con un beso no solo me salvaría, sino que me enseñaría que el amor verdadero no necesita castillos, solo ganas de estar juntos, aunque seamos sapos
+                        </div>
+                    </div>
+                    
+                    <div class="memory-section">
+                        <img src="https://media0.giphy.com/media/l2SpUEcP2G3VAgBW0/200w.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🐠 Buscando a Dory</div>
+                        <div class="memory-text">
+                            Aunque me olvide de todo, nunca me olvidaría de usted
+En este mar inmenso, usted y yo seríamos pececitos que se buscan, se encuentran, y no se sueltan nunca, porque aunque la memoria me falle, el corazón siempre sabría nadar directo hacia usted
+                        </div>
+                    </div>
+                    
+                    <div class="memory-section">
+                        <img src="https://i.gifer.com/29RU.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🧞‍♂️ Aladdin</div>
+                        <div class="memory-text">
+                            Volaríamos por el cielo de la mano sin soltar jamás la alfombra
+Usted tomaría mi mano sin miedo, confiando en que puedo mostrarle un mundo nuevo lleno de aventuras y ternura, y yo juraría proteger esa sonrisa suya mientras volamos sobre las estrellas, cantando bajito que este mundo es solo para nosotros
+                        </div>
+                                            <div class="memory-section">
+                        <img src="https://i.pinimg.com/originals/64/27/ec/6427ec6ef66d391c4f19501bbe31006a.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🐉 Como entrenar a tu dragon</div>
+                        <div class="memory-text">
+                            Usted sería mi mejor amiga dragona, y yo su jinete de confianza
+En un mundo donde humanos y dragones no se entendían, nosotros habríamos sido la excepción, porque desde la primera mirada sabríamos que somos parte del mismo vuelo, yo confiaría en usted con los ojos cerrados, y usted volaría conmigo aunque el mundo dijera que no, seríamos libres entre las nubes, sin miedo a caer, porque mientras estemos juntos, no hay tormenta que no podamos cruzar
+                        </div>
+                    </div>
+                                        <div class="memory-section">
+                        <img src="https://i.gifer.com/TjgL.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="memory-title">🦊 Zootopia</div>
+                        <div class="memory-text">
+                            Tan diferentes, tan perfectos como equipo
+Usted con esa dulzura decidida, yo con este corazón algo despistado pero valiente, juntos resolviendo todo lo que la vida nos lanza, porque aunque seamos distintos, lo nuestro siempre encaja como si hubiéramos nacido para ayudarnos y querernos
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+                <p>Cada día que pasa, descubro algo nuevo que me hace amarte aún más. Tu forma de ver el mundo, tu risa contagiosa, la manera en que cuidas de mí cuando estoy enfermo, cómo me apoyas en mis sueños más locos. Eres mi compañero de aventuras, mi refugio en las tormentas, mi mejor amigo.</p>
+                
+                <div class="romantic-quote">
+                    Contigo he aprendido que el amor verdadero no es solo una emoción, sino una decisión diaria de elegir al otro, de crecer juntos, de construir un futuro lleno de sueños compartidos.
+                </div>
+                
+                <div class="promises-section">
+                    <div class="promises-title">Mis Promesas Para Ti</div>
+                    
+                    <div class="promise-item">
+                         <img src="https://i.pinimg.com/originals/da/f3/a4/daf3a4c4ec06aea34548831c80421207.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="promise-text">Prometo amarte en tus días buenos y en los difíciles, cuando tengas dudas y cuando estés seguro/a, en la enfermedad y en la salud, por toda la eternidad.</div>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <img src="https://i.gifer.com/origin/c4/c44546ace46a53fcf85fa652598042f1_w200.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="promise-text">Prometo ser tu mejor amigo, tu confidente, tu compañero de risas y tu hombro donde llorar cuando lo necesites.</div>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <img src="https://i.pinimg.com/originals/e0/37/ed/e037edefa1de62dfd6810b870950c538.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="promise-text">Prometo nunca dejar de cortejarte, de sorprenderte, de hacerte sentir especial cada día como si fuera el primero que nos conocimos.</div>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/081/386/586/original/kath-kitty.gif?1730133028" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="promise-text">Prometo apoyar tus sueños, celebrar tus logros, y estar a tu lado para convertir cada meta en realidad.</div>
+                    </div>
+                    
+                    <div class="promise-item">
+                        <img src="https://i.pinimg.com/originals/05/09/d2/0509d27f0fb2fe7f6f59ea437a98056e.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="promise-text">Prometo cuidar de nuestro amor como el tesoro más preciado que tengo, porque para mí, tú eres mi mayor riqueza.</div>
+                    </div>
+                </div>
+                
+                <p>Quiero que sepas que cada día que pasa, mi amor por ti se vuelve más profundo. No es solo pasión lo que siento, es admiración, respeto, complicidad, y una conexión que trasciende lo físico. Tú me complementas de maneras que ni siquiera sabía que necesitaba.</p>
+                
+                <div class="future-dreams-section">
+                    <div class="future-dreams-title">Nuestros Sueños Juntos</div>
+                    
+                    <div class="dream-item">
+                        <img src="https://i.pinimg.com/originals/a2/db/9e/a2db9eab72a25bbeb6e5a80fe4569345.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="dream-title">🏡 Nuestro Hogar</div>
+                        <div class="dream-text">Sueño con la casa que construiremos juntos, llena de risas, de recuerdos, de momentos compartidos. Donde cada rincón tenga nuestra historia y donde envejezcamos juntos, rodeados de amor.</div>
+                    </div>
+                    
+                    <div class="dream-item">
+                        <img src="https://gifdb.com/images/high/sanrio-hello-kitty-dear-daniel-p32dam9abi7yxlie.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="dream-title">✈️ Nuestras Aventuras</div>
+                        <div class="dream-text">Quiero recorrer el mundo contigo, descubrir nuevas culturas, crear recuerdos en cada destino. Desde París hasta Tokyo, desde las montañas más altas hasta las playas más hermosas, quiero que cada aventura sea contigo.</div>
+                    </div>
+                    
+                    <div class="dream-item">
+                        <img src="https://i.gifer.com/origin/fd/fd0d77480a0c56993e444663b4476a95_w200.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="dream-title">👶 Nuestra Familia</div>
+                        <div class="dream-text">Sueño con el día en que podamos formar una familia juntos, enseñar a nuestros hijos el significado del amor verdadero, y ver cómo nuestro amor se multiplica en cada pequeño ser que llegue a nuestras vidas.</div>
+                    </div>
+                    
+                    <div class="dream-item">
+                        <img src="https://i.pinimg.com/originals/d8/55/01/d85501473bb80f5e9f1ca4ff5209b47b.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                        <div class="dream-title">🌅 Nuestro Futuro</div>
+                        <div class="dream-text">Imagino nuestros cabellos grises, nuestras manos arrugadas pero siempre entrelazadas, recordando todos los momentos que vivimos juntos y agradeciendo cada día que el destino nos permitió encontrarnos.</div>
+                    </div>
+                </div>
+                
+                <p>Mi amor, quiero que sepas que eres mi persona favorita en todo el universo. Contigo he encontrado no solo al amor de mi vida, sino a mi mejor amigo, mi confidente, mi cómplice en esta hermosa aventura llamada vida.</p>
+
+                <img src="https://media.tenor.com/lnI645QIjMAAAAAj/gatitos-enamorados-besos-de-amor.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                
+                <p>Gracias por elegirme cada día, por amarme con mis defectos y virtudes, por ser paciente conmigo cuando no soy la mejor versión de mí mismo/a, y por inspirarme a ser mejor persona cada día.</p>
+                
+                <div class="romantic-quote">
+                    Si tuviera que vivir mil vidas, en cada una de ellas te buscaría, te encontraría y te amaría con la misma intensidad con la que te amo ahora.
+                </div>
+                
+                <p>Esta carta es solo una pequeña muestra de todo lo que siento por ti. Las palabras se quedan cortas para expresar la magnitud de mi amor, pero espero que cada línea llegue a tu corazón y te haga sonreír.</p>
+
+                <img src="https://usagif.com/wp-content/uploads/2022/hqgif/cat-hug-50-warm-cats-in-blanket.gif" width="200" alt="Dama y Vagabundo" style="border-radius:20px; box-shadow:0 6px 12px rgba(0,0,0,0.3); margin-bottom:20px;">
+                
+                <p>Te amo más allá de las palabras, más allá del tiempo, más allá de cualquier cosa que pueda existir en este mundo. Eres mi todo, mi siempre, mi para siempre.</p>
+                
+                <div class="signature">
+                    Con todo amor,<br>
+                    Tu novio que te ama mucho. j 💕
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="close-button" id="closeButton">Cerrar Carta 💌</button>
+
+    <script>
+        // Variables globales
+        let isEnvelopeOpened = false;
+        let fireworksInterval;
+        let letterFireworksInterval;
+        let floatingInterval;
+        let starsInterval;
+
+        // Crear estrellas
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Crear fuegos artificiales
+        function createFirework() {
+            const container = document.getElementById('fireworksContainer');
+            const firework = document.createElement('div');
+            const colors = ['pink', 'purple', 'gold'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            firework.className = `firework ${randomColor}`;
+            firework.style.left = Math.random() * 100 + '%';
+            firework.style.top = Math.random() * 100 + '%';
+            
+            container.appendChild(firework);
+            
+            // Animar explosión
+            setTimeout(() => {
+                firework.classList.add('explode');
+                createParticles(firework.offsetLeft, firework.offsetTop, randomColor);
+            }, 100);
+            
+            // Limpiar después de la animación
+            setTimeout(() => {
+                if (firework.parentNode) {
+                    firework.parentNode.removeChild(firework);
+                }
+            }, 3000);
+        }
+
+        // Crear partículas de fuegos artificiales
+        function createParticles(x, y, color) {
+            const container = document.getElementById('fireworksContainer');
+            const particleCount = 12;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = `firework-particle ${color}`;
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                
+                const angle = (i / particleCount) * 2 * Math.PI;
+                const velocity = 50 + Math.random() * 100;
+                const dx = Math.cos(angle) * velocity;
+                const dy = Math.sin(angle) * velocity;
+                
+                container.appendChild(particle);
+                
+                // Animar partícula
+                particle.animate([
+                    { transform: 'translate(0, 0)', opacity: 1 },
+                    { transform: `translate(${dx}px, ${dy}px)`, opacity: 0 }
+                ], {
+                    duration: 1500,
+                    easing: 'ease-out'
+                }).onfinish = () => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                    }
+                };
+            }
+        }
+
+        // Crear fuegos artificiales especiales para la carta
+        function createLetterFireworks() {
+            const container = document.getElementById('letterFireworks');
+            
+            // Fuegos artificiales en los bordes
+            for (let i = 0; i < 4; i++) {
+                const firework = document.createElement('div');
+                const colors = ['heart', 'rose', 'sparkle'];
+                const randomColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                firework.className = `border-firework ${randomColor}`;
+                
+                // Posicionar en los bordes
+                if (i === 0) { // Top
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = '10%';
+                } else if (i === 1) { // Right
+                    firework.style.left = '90%';
+                    firework.style.top = Math.random() * 100 + '%';
+                } else if (i === 2) { // Bottom
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = '90%';
+                } else { // Left
+                    firework.style.left = '10%';
+                    firework.style.top = Math.random() * 100 + '%';
+                }
+                
+                container.appendChild(firework);
+                
+                // Animar explosión
+                firework.animate([
+                    { opacity: 0, transform: 'scale(0.5)' },
+                    { opacity: 1, transform: 'scale(2)' },
+                    { opacity: 0, transform: 'scale(4)' }
+                ], {
+                    duration: 2000,
+                    easing: 'ease-out'
+                }).onfinish = () => {
+                    if (firework.parentNode) {
+                        firework.parentNode.removeChild(firework);
+                    }
+                };
+            }
+            
+            // Efectos de cascada
+            for (let i = 0; i < 6; i++) {
+                const cascade = document.createElement('div');
+                cascade.className = 'cascade-firework';
+                cascade.style.left = Math.random() * 100 + '%';
+                cascade.style.top = '0%';
+                cascade.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(cascade);
+                
+                setTimeout(() => {
+                    if (cascade.parentNode) {
+                        cascade.parentNode.removeChild(cascade);
+                    }
+                }, 4000);
+            }
+            
+            // Efectos de chispas
+            for (let i = 0; i < 20; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle-effect';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 3 + 's';
+                
+                container.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 3000);
+            }
+        }
+
+        // Crear elementos flotantes
+        function createFloatingElement() {
+            const container = document.getElementById('floatingElements');
+            const emojis = ['💖', '💕', '💝', '🌹', '✨', '⭐', '💫', '🦋', '🌸', '💐', '🎀', '💌'];
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
+            
+            const element = document.createElement('div');
+            element.className = 'floating-emoji';
+            element.textContent = randomEmoji;
+            element.style.left = Math.random() * 100 + '%';
+            element.style.animationDelay = Math.random() * 2 + 's';
+            
+            container.appendChild(element);
+            
+            // Limpiar después de la animación
+            setTimeout(() => {
+                if (element.parentNode) {
+                    element.parentNode.removeChild(element);
+                }
+            }, 15000);
+        }
+
+        // Abrir sobre
+        function openEnvelope() {
+            if (isEnvelopeOpened) return;
+            
+            isEnvelopeOpened = true;
+            const envelope = document.getElementById('envelope');
+            const envelopeContainer = document.getElementById('envelopeContainer');
+            const letter = document.getElementById('letter');
+            const closeButton = document.getElementById('closeButton');
+            
+            // Añadir clase de apertura
+            envelope.classList.add('opened');
+            envelopeContainer.classList.add('opening');
+            
+            // Crear fuegos artificiales especiales
+            createLetterFireworks();
+            letterFireworksInterval = setInterval(createLetterFireworks, 3000);
+            
+            // Mostrar carta después de la animación
+            setTimeout(() => {
+                letter.classList.add('show');
+                setTimeout(() => {
+                    closeButton.classList.add('show');
+                }, 1000);
+            }, 2000);
+        }
+
+        // Cerrar carta
+        function closeLetter() {
+            const letter = document.getElementById('letter');
+            const envelope = document.getElementById('envelope');
+            const envelopeContainer = document.getElementById('envelopeContainer');
+            const closeButton = document.getElementById('closeButton');
+            
+            // Ocultar elementos
+            letter.classList.remove('show');
+            closeButton.classList.remove('show');
+            
+            // Restablecer sobre
+            setTimeout(() => {
+                envelope.classList.remove('opened');
+                envelopeContainer.classList.remove('opening');
+                isEnvelopeOpened = false;
+                
+                // Limpiar intervalos de fuegos artificiales especiales
+                if (letterFireworksInterval) {
+                    clearInterval(letterFireworksInterval);
+                }
+            }, 1000);
+        }
+
+        // Inicializar
+        document.addEventListener('DOMContentLoaded', function() {
+            // Crear estrellas
+            createStars();
+            
+            // Iniciar fuegos artificiales
+            fireworksInterval = setInterval(createFirework, 1000);
+            
+            // Iniciar elementos flotantes
+            floatingInterval = setInterval(createFloatingElement, 2000);
+            
+            // Event listeners
+            document.getElementById('envelopeContainer').addEventListener('click', openEnvelope);
+            document.getElementById('closeButton').addEventListener('click', closeLetter);
+            
+            // Crear algunos elementos flotantes iniciales
+            setTimeout(() => {
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(createFloatingElement, i * 500);
+                }
+            }, 1000);
+        });
+        
+        // Limpiar intervalos al salir
+        window.addEventListener('beforeunload', function() {
+            if (fireworksInterval) clearInterval(fireworksInterval);
+            if (letterFireworksInterval) clearInterval(letterFireworksInterval);
+            if (floatingInterval) clearInterval(floatingInterval);
+        });
+    </script>
+</body>
+</html>
